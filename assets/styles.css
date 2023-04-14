@@ -1,0 +1,150 @@
+@import url("fonts.css");
+
+/* Section */
+
+section{
+    background-color: white;
+    
+}
+
+.aboutme-subsection {
+display: flex;
+justify-content: space-around;
+padding: 60px;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'questrialregular';
+}
+
+footer {
+height: 500px;
+background-color: black;
+}
+
+/* Text Formatting */
+
+h1 {
+    margin: 0;
+    font-family:'akzidenzgroteskregular';
+    font-style: bold;
+    text-align: justify;
+    font-size: 100px;
+}
+
+h2 {
+    margin: 0;
+    font-family:'akzidenzgroteskregular';
+    font-style: bold;
+    font-size: 50px;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'akzidenzgroteskregular';
+    font-style: normal;
+    font-size: 40px;
+}
+
+p {
+    margin: 0;
+    font-family: 'questrialregular';
+    font-style: normal;
+    font-size: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* HERO */
+
+.hero {
+    background-color: #1a283f;
+     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/splash.jpg");
+
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    color:white;
+    font-size: 30px;
+}
+
+.hero-area {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero-text {
+    margin-left: 80px;
+    margin-bottom: 200px;
+}
+
+.aboutmebutton {
+    width: 325px;
+    height: 40px;
+    border-radius: 20px;
+    background-color:#015ade25;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-top: 20px; 
+    text-decoration: none;
+}
+
+.aboutmebutton:hover {
+    background-color:#015ade8a;
+}
+
+.aboutmebutton:active {
+    background-color: #A9A9A9;
+    color: #808080
+}
+
+.logo {
+    height: 90px;
+    overflow: auto;
+}
+
+.socials {
+    width: 325px;
+    margin-top: 30px;
+    size: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 100%;
+
+}
+
+
+/* ABOUT ME PAGE */
+
+.headshot {
+    width: 350px;
+    border-radius: 175px;
+}
+
+.lab {
+    width: 350px;
+    border-radius: 175px;
+}
+
+.headshot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+

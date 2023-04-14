@@ -1,0 +1,113 @@
+/* Sidebar Courtesy of GulshanCodes at https://www.cssscript.com/demo/responsive-sidebar-nav-hamburger/, modified by Brendon Cintas */
+
+@import url("fonts.css");
+@import url("styles.css");
+
+/*--====== Sidebar ======--*/
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    max-width: auto;
+    width: 100%;
+    height: 100px;
+    background-color: #0158de8a;
+    box-shadow: 0 15px 20px -4px #000;
+    overflow-x: hidden;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
+    font-family: 'questrialregular';
+    font-weight: bold;
+    display: inline;
+
+  }
+  /* when the sidebar has 'show' class */
+  #sidebar.show {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .sidebar_content {
+    pointer-events: none;
+    /* so that the Sidebar does not get closed while clicking on sidebar_content */
+  }
+
+  .sidebar_logo {
+    height: 90px;
+    overflow: auto;
+
+  }
+  .sidebar_content a {
+    pointer-events: all;
+    /* so that all the a inside sidebar_content are clickable */
+  }
+
+  .side_navlinks ul {
+    position: fixed;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    list-style-type: none;
+    width: 700px;
+    font-size: 25px;
+    padding-top: 7px;
+    padding-right: 70px;
+    position: fixed;
+    top: 8px;
+    right: 15px;
+    
+  }
+  .side_navlinks li a {
+    display: inline;
+    text-decoration: none;
+    opacity: 0.8;
+    float: right;
+  }
+  .side_navlinks a:hover {
+    opacity: 1;
+  }
+
+  /*---- Sidebar-Toggler ----*/
+.sidebar_toggler {
+    position: fixed;
+    top: 4vh;
+    right: 3vw;
+    width: 1.75rem;
+    height: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .sidebar_toggler span {
+    background-color: #ddd;
+    width: 100%;
+    height: 2.4px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    /* so that it doesn't overlap the sidebar_toggler */
+  }
+  /* if the sidebar has 'show' class then their adjacent-sibling (i.e., sidebar_toggler) will... */
+  #sidebar.show + .sidebar_toggler {
+    justify-content: center;
+  }
+  #sidebar.show + .sidebar_toggler span {
+    margin-top: -1.2px;
+    margin-bottom: -1.2px;
+  }
+  #sidebar.show + .sidebar_toggler span:first-child {
+    transform: rotate(45deg);
+  }
+  #sidebar.show + .sidebar_toggler span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  #sidebar.show + .sidebar_toggler span:last-child {
+    transform: rotate(-45deg);
+  }
