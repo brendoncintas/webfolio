@@ -4,23 +4,51 @@
         <link rel="stylesheet" href="./assets/styles.css" />
         <link rel="stylesheet" href="./assets/sidebar.css" />
         <link rel="stylesheet" href="./assets/fonts.css" />
+        <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
         <title>Hi! I'm Doobs.</title>
         <meta charset="UTF-8" />
     </head>
     <body>
         <section class="hero">
-            <img class="logo" src="./assets/img/logo-white.png" alt="Logo" />
-            <div class="sidebar_toggler">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="nav" id="nav">
+                <nav class="nav__content">
+
+                  <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-chevron-right' ></i>
+                  </div>
+
+                  <a href="#" class="nav__logo">
+                  <img href="logo" src="./assets/img/logo-white.png" ></img>
+                  </a>
+
+                  <div class="nav__list">
+
+                    <a href="#aboutme" class="nav__link">
+                    <i class='bx bx-file'></i>
+                    <span class="nav__name">About Me</span>
+                    </a>
+                    <a href="#" class="nav__link">
+                    <i class='bx bx-envelope' ></i>
+                    <span class="nav__name">Messages</span>
+                    </a>
+                    <a href="#" class="nav__link">
+                    <i class='bx bx-bar-chart-square' ></i>
+                    <span class="nav__name">Statistic</span>
+                    </a>
+                    <a href="#" class="nav__link">
+                    <i class='bx bx-cog' ></i>
+                    <span class="nav__name">Settings</span>
+                    </a>
+
+                  </div>
+                </nav>
+
               </div>
-            <aside id="sidebar">
-                <div class="sidebar_content sidebar_head">
-                    <img class="sidebar_logo" src="./assets/img/logo-white.png" alt="Logo" />
-                </div>
-                
-                <div class="sidebar_content sidebar_body">
+
+
+              <!--  
+                <div class="sidebar_content">
                     <nav class="side_navlinks">
                         <ul>
                             <li><a href="#aboutme">About Me</a></li>
@@ -30,8 +58,7 @@
                         </ul>
                     </nav>
                 </div>
-            </aside>
-
+-->
 
             <div class="hero-area">
                 <div class="hero-text">

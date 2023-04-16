@@ -1,113 +1,152 @@
-/* Sidebar Courtesy of GulshanCodes at https://www.cssscript.com/demo/responsive-sidebar-nav-hamburger/, modified by Brendon Cintas */
-
-@import url("fonts.css");
 @import url("styles.css");
+@import url("fonts.css");
 
-/*--====== Sidebar ======--*/
-#sidebar {
+
+@media screen and (max-width: 767px) {
+  .nav__logo, 
+  .nav__toggle, 
+  .nav__name {
+    display: none;
+  }
+
+  .nav__list {
     position: fixed;
-    top: 0;
+    bottom: 2rem;
+    background-color: var(--container-color);
+    width: 100%;
+    padding: 0px 0px;
+    border-radius: 1rem;
+    left: 0;
     right: 0;
-    z-index: 999;
-    max-width: auto;
-    width: 100%;
-    height: 100px;
-    background-color: #0158de8a;
-    box-shadow: 0 15px 20px -4px #000;
-    overflow-x: hidden;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-100%);
-    transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
-    font-family: 'questrialregular';
-    font-weight: bold;
-    display: inline;
-
-  }
-  /* when the sidebar has 'show' class */
-  #sidebar.show {
-    pointer-events: all;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  }
-  .sidebar_content {
-    pointer-events: none;
-    /* so that the Sidebar does not get closed while clicking on sidebar_content */
-  }
-
-  .sidebar_logo {
-    height: 90px;
-    overflow: auto;
-
-  }
-  .sidebar_content a {
-    pointer-events: all;
-    /* so that all the a inside sidebar_content are clickable */
-  }
-
-  .side_navlinks ul {
-    position: fixed;
-    display: inline-flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    list-style-type: none;
-    width: 700px;
-    font-size: 25px;
-    padding-top: 7px;
-    padding-right: 70px;
-    position: fixed;
-    top: 8px;
-    right: 15px;
-    
-  }
-  .side_navlinks li a {
-    display: inline;
-    text-decoration: none;
-    opacity: 0.8;
-    float: right;
-  }
-  .side_navlinks a:hover {
-    opacity: 1;
-  }
-
-  /*---- Sidebar-Toggler ----*/
-.sidebar_toggler {
-    position: fixed;
-    top: 4vh;
-    right: 3vw;
-    width: 1.75rem;
-    height: 1.3rem;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  .sidebar_toggler span {
-    background-color: #ddd;
-    width: 100%;
-    height: 2.4px;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    /* so that it doesn't overlap the sidebar_toggler */
-  }
-  /* if the sidebar has 'show' class then their adjacent-sibling (i.e., sidebar_toggler) will... */
-  #sidebar.show + .sidebar_toggler {
     justify-content: center;
+    align-items: center;
+    column-gap: 36px;
+    transition: .4s;
   }
-  #sidebar.show + .sidebar_toggler span {
-    margin-top: -1.2px;
-    margin-bottom: -1.2px;
+}
+
+.nav__link {
+  display: flex;
+  color: var(--text-color-unactive);
+  font-weight: 500;
+  transition: .3s;
+}
+
+.nav__link i {
+  font-size: 1.25rem;
+}
+
+.nav__link:hover {
+  color: var(--text-color);
+}
+
+/* Active link */
+.active-link {
+  color: var(--primary-color);
+}
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .nav__list {
+    column-gap: 30px;
   }
-  #sidebar.show + .sidebar_toggler span:first-child {
-    transform: rotate(45deg);
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    width: 332px;
   }
-  #sidebar.show + .sidebar_toggler span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-100%);
+}
+
+@media screen and (min-width: 767px) {
+  .container {
+    margin-left: 7rem;
+    margin-right: 1.5rem;
   }
-  #sidebar.show + .sidebar_toggler span:last-child {
-    transform: rotate(-45deg);
+  .nav {
+    position: fixed;
+    left: 0;
+    background-color: var(--container-closed);
+    width: 3px;
+    height: 100vh;
+    padding: 0.001rem;
+    transition: .4s;
   }
+
+  .nav__logo i {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+  }
+
+  .nav__logo, .nav__link {
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+  .nav__list {
+    display: grid;
+    row-gap: 2.5rem;
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+  .nav__content {
+    overflow: hidden;
+    height: 100%;
+    font-family: var(--title-font);
+  }
+
+  .nav__toggle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: var(--activate-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    font-size: 1.20rem;
+    display: grid;
+    place-items: center;
+    top: 2rem;
+    right: -20px;
+    cursor: pointer;
+    transition: .4s;
+  }
+
+  .nav__logo {
+    display: flex;
+  }
+
+  .nav__logo img { 
+    height: 100px;
+  }
+}
+
+/* Show menu */
+.show-menu {
+  width: 300px;
+  background-color: var(--activate-color);
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+/* Rotate toggle icon */
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+/* For 2K & 4K resolutions */
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.7;
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 2.5;
+  }
+}

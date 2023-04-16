@@ -1,18 +1,26 @@
-/* Sidebar */
+/*=============== LINK ACTIVE ===============*/
+const linkColor = document.querySelectorAll('.nav__link')
+function colorLink(){
+    linkColor.forEach(l => l.classList.remove('active-link'))
+    this.classList.add('active-link')
+}
 
-const sidebar = document.querySelector('#sidebar');
-const sidebarToggler = document.querySelector('.sidebar_toggler');
+linkColor.forEach(l => l.addEventListener('click', colorLink))
 
+/*=============== SHOW HIDDEN MENU ===============*/
+const showMenu = (toggleId, navbarId) =>{
+    const toggle = document.getElementById(toggleId),
+    navbar = document.getElementById(navbarId)
 
-// Toggling the Sidebar
-sidebarToggler.addEventListener('click', () => {
-    sidebar.classList.toggle('show');
-});
-
-
-// Closing the Sidebar on clicking Outside and on the Sidebar-Links
-window.addEventListener('click', (e) => {
-    if (e.target.id !== 'sidebar' && e.target.className !== 'sidebar_toggler') {
-        sidebar.classList.remove('show');
+    if(toggle && navbar){
+        toggle.addEventListener('click', ()=>{
+            /* Show menu */
+            navbar.classList.toggle('show-menu')
+            navbar.classList.toggle('show-icon')
+            /* Rotate toggle icon */
+            toggle.classList.toggle('rotate-icon')
+        })
     }
-});
+}
+showMenu('nav-toggle','nav')
+showMenu('nav-toggle', 'nav__logo img')

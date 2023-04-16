@@ -1,57 +1,88 @@
 @import url("fonts.css");
 
-/* Section */
 
-section{
-    background-color: white;
-    
+/* Global Variables */
+
+:root {
+  /* Colours */
+  --primary-color: #0158de;
+  --text-color: #ffffff;
+  --text-color-unactive: #cacaca;
+  --container-closed: #015ade25;
+  --chevron-color: #0158de8a;
+  --body-color: #2d71d6;
+  --activate-color: #0158de8a;
+  
+
+  /* Fonts */
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --title-font: 'akzidenzgroteskregular';
+  --body-font: 'questrialregular';
+  --normal-font-size: .938rem;
 }
 
-.aboutme-subsection {
-display: flex;
-justify-content: space-around;
-padding: 60px;
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
 
+/* Base */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'questrialregular';
+  position: relative;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
-footer {
-height: 500px;
-background-color: black;
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Sections */
+
+section{
+    background-color: var(--primary-color);
+    
 }
 
 /* Text Formatting */
 
 h1 {
     margin: 0;
-    font-family:'akzidenzgroteskregular';
+    font-family: var(--title-font);
     font-style: bold;
-    text-align: justify;
-    font-size: 100px;
+    text-align: center;
+    font-size: 6rem;
 }
 
 h2 {
     margin: 0;
-    font-family:'akzidenzgroteskregular';
+    font-family: var(--title-font);
     font-style: bold;
-    font-size: 50px;
+    text-align: center;
+    font-size: 3rem;
 }
 
 h3 {
     margin: 0;
-    font-family: 'akzidenzgroteskregular';
+    font-family: var(--title-font);
     font-style: normal;
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 p {
     margin: 0;
-    font-family: 'questrialregular';
+    font-family: var(--body-font);
     font-style: normal;
     font-size: 25px;
     text-align: justify;
@@ -61,7 +92,7 @@ p {
 /* HERO */
 
 .hero {
-    background-color: #1a283f;
+    background-color: var(--body-color);
      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/splash.jpg");
 
@@ -69,7 +100,7 @@ p {
     height: 100vh;
     width: 100vw;
     color:white;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .hero-area {
@@ -85,19 +116,23 @@ p {
 }
 
 .aboutmebutton {
-    width: 325px;
+
     height: 40px;
-    border-radius: 20px;
-    background-color:#015ade25;
+    border-radius: 30px;
+    background-color: var(--container-closed);
     text-align: center;
     font-size: 30px;
-    padding-top: 10px;
+    padding-top: 5px;
     margin-top: 20px; 
     text-decoration: none;
+    color: var(--text-color);
+    align-items: center;
+    
 }
 
 .aboutmebutton:hover {
-    background-color:#015ade8a;
+    background-color: var(--activate-color);
+    transition: 0.3s;
 }
 
 .aboutmebutton:active {
@@ -105,22 +140,21 @@ p {
     color: #808080
 }
 
-.logo {
-    height: 90px;
-    overflow: auto;
-}
-
 .socials {
-    width: 325px;
     margin-top: 30px;
     size: 100px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     height: 100%;
+    align-items: center
 
 }
 
+.socials svg:hover {
+    fill: var(--activate-color);
+    transition: 0.3s;
+}
 
 /* ABOUT ME PAGE */
 
@@ -140,11 +174,5 @@ p {
     align-items: center;
     margin-left: 25px;
 }
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
 
 
