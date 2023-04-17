@@ -1,4 +1,6 @@
-/*=============== LINK ACTIVE ===============*/
+
+/* Sidebar Menu */
+/* Link Active */
 const linkColor = document.querySelectorAll('.nav__link')
 function colorLink(){
     linkColor.forEach(l => l.classList.remove('active-link'))
@@ -7,7 +9,7 @@ function colorLink(){
 
 linkColor.forEach(l => l.addEventListener('click', colorLink))
 
-/*=============== SHOW HIDDEN MENU ===============*/
+/* Link Inactive */
 const showMenu = (toggleId, navbarId) =>{
     const toggle = document.getElementById(toggleId),
     navbar = document.getElementById(navbarId)
@@ -23,4 +25,3 @@ const showMenu = (toggleId, navbarId) =>{
     }
 }
 showMenu('nav-toggle','nav')
-showMenu('nav-toggle', 'nav__logo img')

@@ -20,6 +20,7 @@
   --title-font: 'akzidenzgroteskregular';
   --body-font: 'questrialregular';
   --normal-font-size: .938rem;
+  scroll-behavior: smooth;
 }
 
 /* Responsive typography */
@@ -41,6 +42,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--text-color);
+  overflow: auto;
 }
 
 a {
@@ -69,22 +71,22 @@ h2 {
     font-family: var(--title-font);
     font-style: bold;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 h3 {
     margin: 0;
     font-family: var(--title-font);
     font-style: normal;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--text-color)
 }
 
-p {
+p1 {
     margin: 0;
     font-family: var(--body-font);
     font-style: normal;
-    font-size: 25px;
+    font-size: 35px;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -136,8 +138,8 @@ p {
 }
 
 .aboutmebutton:active {
-    background-color: #A9A9A9;
-    color: #808080
+    background-color: var(--text-color);
+    color: var(--text-color-unactive);
 }
 
 .socials {
@@ -158,13 +160,14 @@ p {
 
 /* ABOUT ME PAGE */
 
+
 .aboutme {
     height: 100vh;
     width: 100vw;
 }
 
 .aboutme-heading { 
-    background-color: var(--primary-color);
+    background: linear-gradient(to left,var(--chevron-color), var(--primary-color));
     margin-left: 30vw;
     width: 70vw;
     height: 100px;
@@ -175,26 +178,45 @@ p {
 }
 
 .aboutme-body {
-    margin-left: 50px;
-    margin-right: 200px;
-    color: var(--text-color-alt)
+    font-size: 2rem;
+    margin-left: 5vw;
+    margin-right: 40vw;
+
+    color: var(--text-color-alt);
+    text-align: justify;
+    justify-content: space-between;
 }
 
 .headshot {
-    width: 350px;
-    border-radius: 175px;
+    width: 400px;
+    border-radius: 200px;
 }
 
 .lab {
-    width: 350px;
-    border-radius: 175px;
+    width: 400px;
+    border-radius: 200px;
 }
 
 .headshot-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 25px;
+    flex-direction: column;
+    float: right;
+    margin-top: -38vh;
+    margin-right: 10vw;
+}
+
+@media only screen and (max-width: 1400px) {
+    .headshot-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 5vh
+    }
+
+    .aboutme-body {
+        display: flex;
+        margin-right: 10vw;
+    }
 }
 
 
